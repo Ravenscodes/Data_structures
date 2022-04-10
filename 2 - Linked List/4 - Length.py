@@ -1,15 +1,16 @@
 """
 In this problem, you have to implement the length() function which will find the length of a given linked list.
 
-Input #
+Input
 A linked list.
 
-Output #
+Output
 The number of nodes in the list.
 
-Sample Input #
+Sample Input
 linkedlist = 0->1->2->3->4
-Sample Output #
+
+Sample Output
 5
 """
 
