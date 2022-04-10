@@ -46,3 +46,24 @@ class LinkedList:
             temp = temp.next_element
         print(temp.data, "-> None")
         return True
+
+    def delete_at_head(self):
+        # Get Head and firstElement of List
+        first_element = self.get_head()
+        # If List is not empty then link head to the
+        # nextElement of firstElement.
+        if (first_element is not None):
+            self.head_node = first_element.next_element
+            first_element.next_element = None
+        return
+
+    def length(self):
+        # start from the first element
+        curr = self.get_head()
+        length = 0
+
+        # Traverse the list and count the number of nodes
+        while curr is not None:
+            length += 1
+            curr = curr.next_element
+        return length
