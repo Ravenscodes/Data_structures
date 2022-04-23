@@ -20,18 +20,16 @@ from Stack import MyStack
 
 
 def reverseK(queue, k):
-    tmp_queue = MyQueue()
     stack = MyStack()
-    if k <= 0 or queue.is_empty() or queue.size() < k:
-        return None
     for i in range(k):
         stack.push(queue.dequeue())
-    while not stack.is_empty():
-        tmp_queue.enqueue(stack.pop())
-    while not queue.is_empty():
-        tmp_queue.enqueue(queue.dequeue())
+    while stack.is_empty() is False:
+        queue.enqueue(stack.pop())
+    size = queue.size()
+    for i in range(size - k):
+        queue.enqueue(queue.dequeue())
 
-    return tmp_queue
+    return queue
 
 
 queue = MyQueue()
